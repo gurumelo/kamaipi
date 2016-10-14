@@ -25,7 +25,13 @@ su contrasena de root es xXxXxxxXxXXXX
 ssh root@xx.xx.xx.xx
 ```
 ```
-passwd && apt-get update && apt-get upgrade && apt-get install fail2ban
+passwd && apt-get update && apt-get upgrade && apt-get install fail2ban git
 ```
 
-
+Creamos usuario de sistema con home, posicionar y clonar
+```
+useradd -s /usr/sbin/nologin -r -m nodekami
+cd /home/nodekami
+git clone https://github.com/gurumelo/nodekami
+chown -r nodekami:nodekami *
+```
