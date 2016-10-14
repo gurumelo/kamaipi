@@ -13,3 +13,19 @@ Nodekamis funcionando:
 
 2. ...
 
+
+Teníamos 2 euros y pico para un vps.
+
+```
+Bienvenido a xxxxxx
+su nuevo servidor virtual es xx.xx.xx.xx
+su contrasena de root es xXxXxxxXxXXXX
+```
+```
+ssh root@xx.xx.xx.xx
+```
+```
+passwd && apt-get update && apt-get upgrade && apt-get install fail2ban
+```
+
+
