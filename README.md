@@ -8,6 +8,8 @@ llamarse, las diferentes personas de diferentes servidores, entre ellas. Una red
 sólo con software libre.
 
 Nodekamis funcionando:
+
 1. http://voip.elbinario.net
+
 2. ...
 
