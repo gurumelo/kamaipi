@@ -13,6 +13,7 @@ Nodekamis funcionando:
 
 2. ...
 
+![](http://i.imgur.com/7CqKYPo.png)
 
 Teníamos 2 euros y pico para un vps con **Debian**.
 
