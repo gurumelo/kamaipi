@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>voip.elbinario.net</title>
+	<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA1H3MAICAgAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIiIiIgAAAiIAAAACIAAhEgIgIgIRACESIiIiIhEAIiACIgIAIgAiIwIiIjAiACIiIiIiIiIAAiIiIiIiIAACIiAAAiIgAAIiAAAAIiAAAiAAAAACIAAAAAAAAAAAD//wAA//8AAP//AADgBwAAwAMAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAACAAQAAg8EAAIfhAADP8wAA" rel="icon" type="image/x-icon" />	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+	<link rel="stylesheet" href="css/index.css" />
+</head>
+<body class="cbp-spmenu-push">
+	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+	    <h3>Menu<span class="azul">.</span></h3>
+	    <a href="#" id="configlinux">Config Android <img src="img/android.png"></a>
+	    <a href="#">Config Linux <img src="img/linux.png"></a>
+	    <a href="#">Monta tu nodo <img src="img/nodo.png"></a>
+	</nav>
+	
+	
+	<div id="capa">
+		<div id="menu"><img src="img/menu.png"></div>
+		<div id="crear" class="margen"><span class="azul">.</span>CREAR TELEFONO</div>
+
+		<div class="limpia"></div>
+		
+		<div id="invi">
+			<div id="cajaf" class="margen">
+				Nueva contraseña
+			        <form id="t">
+		        	</form>
+			</div>
+		</div>
+	
+		<div id="pie">
+			Telefonia ip libre <span class="azul cazul">♥</span> cifrada y descentralizada
+		</div>
+	</div>
+
+	<div id="configs">
+		<div id="cerrar"><img src="img/menu.png"></div>
+		<video controls poster="img/videoandroid.jpg" preload="none">
+			<source src="video/android.mp4" type="video/mp4">
+			<source src="video/android.ogg" type="video/ogg">
+		</video>
+	</div>
+
+
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jsencrypt.min.js"></script>
+	<script src="js/index.js"></script>
+	<script>
+		$('#t').html('\
+			<input type="password" name="contrasena" id="contrasena" maxlength="25" />\
+			<input type="text" name="paso" id="paso" class="invi" />\
+			<input type="text" name="aleatori" id="aleatori" class="invi" value="<%= aleatori %>" />\
+			<div id="err"></div>\
+			<div class="derecha">\
+				<button type="submit" id="crearsubmit"><span class="azul">.</span>Crear <img src="img/carga.gif" id="carga" class="invi" /></button>\
+			</div>\
+		');
+	</script>
+
+</body>
+</html>

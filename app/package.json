@@ -1,0 +1,18 @@
+{
+  "name": "living",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "GPL",
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "*",
+    "express": "*",
+    "express-session": "*",
+    "mysql": "*",
+    "sqlite3": "*",
+    "ursa": "*",
+    "validator": "*"
+  }
+}

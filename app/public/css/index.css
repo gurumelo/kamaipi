@@ -1,0 +1,257 @@
+@font-face {
+	font-family: 'sf_collegiate_solidregular';
+	src: url('SF_Collegiate_Solid-webfont.eot');
+	src: url('SF_Collegiate_Solid-webfont.eot?#iefix') format('embedded-opentype'),
+		url('SF_Collegiate_Solid-webfont.woff') format('woff'),
+		url('SF_Collegiate_Solid-webfont.ttf') format('truetype'),
+		url('SF_Collegiate_Solid-webfont.svg#sf_collegiate_solidregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inconsolata Bold'), local('Inconsolata-Bold'), url(Inconsolata.ttf) format('truetype');
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+body {
+	margin: 0 auto;
+	padding: 0;
+	background: #000;
+	background-image: url(../img/kamailio.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	text-align: center;
+}
+#capa {
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	overflow-y: auto;
+}
+#menu {
+	padding: 15px 0 0 15px;
+	text-align: left;
+	cursor: pointer;
+}
+#crear {
+	font-family: 'sf_collegiate_solidregular', Arial, sans-serif;
+	color: #ffffff;
+	font-size: 48px;
+	border: 2px solid #fbfbfb;
+	padding: 12px 50px 10px 50px;
+	border-radius: 3px;
+	transition: all 0.3s ease-in-out 0s;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out 0.2s;
+}
+#crear:hover {
+	border: 4px solid #fbfbfb;
+}
+#cajaf {
+	border: 2px solid #fbfbfb;
+	padding: 20px 30px;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+	transition: all 0.2s ease-in-out 0.2s;
+	color: #ffffff;
+	font-family: "Inconsolata",Consolas,monaco,monospace;;
+	font-size: 22px;
+	/*font-weight: bold;*/
+	border-radius: 3px;
+	max-width: 300px;
+	margin-bottom: 50px;
+}
+input#contrasena {
+	width: 100%;
+	max-width: 100%;
+	background: none;
+	border: none;
+	border-bottom: 2px solid #46bbdc;
+	font-size: 20px;
+	color: #ffffff;
+	margin-top: 10px;
+	outline: none;
+}
+button#crearsubmit {
+	font-family: 'sf_collegiate_solidregular', Arial, sans-serif;
+	background: none;
+	background: rgba(0,0,0,0.3);
+	border: none;
+	border: 1px solid #ffffff;
+	color: #ffffff;
+	margin-top: 20px;
+	font-size: 26px;
+	padding: 6px 28px 6px 25px;
+	border-radius: 3px;
+	cursor: pointer;
+	font-weight: normal;
+	transition: all 0.5s ease-in-out 0.5s;
+}
+#invi {
+	display: none;
+}
+.invi {
+	display: none;
+}
+.limpia {
+	clear: both;
+}
+.margen {
+	margin-left: 100px;
+   	margin-top: 50px;
+}
+.azul {
+	color: #46bbdc;
+}
+.cazul {
+	font-size: 22px;
+}
+.derecha {
+	text-align: right;
+}
+#err {
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid #fff;
+	display: none;
+	font-size: 15px;
+	margin-top: 17px;
+	padding: 10px 20px;
+}
+#recuerda {
+	cursor: pointer;
+}
+.blinkime {
+	animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {  
+	50% { opacity: 0.0; }
+}
+#pie {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	color: #fbfbfb;
+	font-family: "sf_collegiate_solidregular",Arial,sans-serif;
+	font-size: 12px;
+}
+.cbp-spmenu {
+	background: rgba(69,188,222,0.6);
+	position: fixed;
+	font-family: "Inconsolata",Consolas,monaco,monospace;;
+}
+.cbp-spmenu h3 {
+	color: #afdefa;
+	font-size: 1.9em;
+	padding: 20px;
+	margin: 0;
+	font-weight: 300;
+}
+.cbp-spmenu a {
+	display: block;
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: 300;
+	text-align: left;
+}
+.cbp-spmenu img {
+	vertical-align: middle;
+}
+.cbp-spmenu a:hover {
+	border-bottom: 5px dotted #45bcde;
+}
+.cbp-spmenu a:active {
+	background: #46bbdc;
+}
+.cbp-spmenu-vertical {
+	width: 240px;
+	height: 100%;
+	top: 0;
+	z-index: 1000;
+	overflow-y: auto;
+}
+.cbp-spmenu-vertical a {
+	border-bottom: 4px dotted #45bcde;
+	padding: 1em;
+	text-decoration:none;
+	text-shadow: 1px 1px 5px #46bbdc;
+}
+.cbp-spmenu-left {
+	left: -240px;
+}
+.cbp-spmenu-left.cbp-spmenu-open {
+	left: 0px;
+}
+.cbp-spmenu-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+}
+.cbp-spmenu-push-toright {
+	left: 240px;
+}
+.cbp-spmenu,
+.cbp-spmenu-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+#configs {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	margin-right: 240px;
+	z-index: 9998;
+	overflow-y: auto;
+}
+#cerrar {
+	position:absolute;
+	top:5px;
+	right:5px;
+	cursor: pointer;
+	opacity: 0.9;
+}
+video {
+	width:100%; 
+	max-width:400px; 
+	height:auto !important;
+}
+@media (max-width: 768px) {
+	.margen {
+		margin-left: 0;
+	}
+}
+@media (max-width: 500px) {
+	#crear {
+		font-size: 30px;
+		padding: 12px 30px 10px 30px;
+	}
+	#cajaf {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+@media (max-height: 395px) {
+	#pie {
+		display: none;
+	}
+}
+
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
