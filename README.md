@@ -57,6 +57,17 @@ Instalamos nginx y node
 
 
 ---------------------------------------------------------------
+las llaves
+     
+
+openssl genrsa -out rsaprivada.pem 2048
+openssl rsa -pubout -in rsaprivada.pem -out rsapublica.pem
+cat rsapublica.pem
+chmod 400 rsaprivada.pem
+pegar la publica en jsencrypt sin retornos de carro
+
+
+
 /etc/systemd/system# more nodekami.service 
 [Service]
 WorkingDirectory=/home/nodekami/app
