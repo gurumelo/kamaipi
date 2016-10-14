@@ -37,8 +37,26 @@ git clone https://github.com/gurumelo/nodekami && cp -r nodekami/* . && rm -rf n
 chown -r nodekami:nodekami *
 ```
 
-Instalación de Kamailio
+Luego volvemos sobre ello.
 
+##Instalación de Kamailio
+
+Repositorios e instalación de paquetes necesarios
+
+```
+# Importamos llaves del repositorio de kamailio
+apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xfb40d3e6508ea4c8
+
+# Añadimos repositorios
+echo "deb http://deb.kamailio.org/kamailio jessie main" >> /etc/apt/sources.list
+echo "deb-src http://deb.kamailio.org/kamailio jessie main" >> /etc/apt/sources.list
+
+# Actualizamos repositorios
+apt-get update
+
+# Instalamos paquetería
+apt-get install kamailio kamailio-sqlite-modules kamailio-tls-modules rtpproxy sqlite3 openssl gnutls-bin
+```
 
 
 
