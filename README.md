@@ -58,7 +58,7 @@ apt-get update
 apt-get install kamailio kamailio-sqlite-modules kamailio-tls-modules rtpproxy sqlite3 openssl gnutls-bin
 ```
 
-**Importante**
+******Importante******
 
 ```
 #Añadimos al grupo rtpproxy, el usuario kamailio, para que pueda usar el socket
