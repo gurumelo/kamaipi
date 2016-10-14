@@ -9,7 +9,7 @@ sólo con software libre.
 
 Nodekamis funcionando:
 
-1. http://voip.elbinario.net
+1. https://voip.elbinario.net
 
 2. ...
 
