@@ -58,7 +58,7 @@ apt-get update
 apt-get install kamailio kamailio-sqlite-modules kamailio-tls-modules rtpproxy sqlite3 openssl gnutls-bin
 ```
 
-******Importante******
+**Importante**
 
 ```
 #Añadimos al grupo rtpproxy, el usuario kamailio, para que pueda usar el socket
@@ -73,6 +73,23 @@ usermod -a -G rtpproxy kamailio
 # nano /etc/default/kamailio 
 # descomentamos, cambiamos #RUN_KAMAILIO=yes
 # por RUN_KAMAILIO=yes
+```
+
+**/etc/kamailio/kamctlrc**
+
+```
+# nano /etc/kamailio/kamctlrc
+# cambiamos # SIP_DOMAIN=kamailio.org
+# por SIP_DOMAIN=AQUÍTUDOMINIO.net
+
+# cambiamos # DBENGINE=MYSQL
+# por DBENGINE=SQLITE
+
+# cambiamos # DB_PATH="/usr/local/etc/kamailio/dbtext"
+# por DB_PATH="/home/nodekami/app/kamailio.sqlite"
+
+# descomentamos, cambiamos # STORE_PLAINTEXT_PW=0
+# por STORE_PLAINTEXT_PW=0
 ```
 
 
