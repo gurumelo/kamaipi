@@ -14,7 +14,7 @@ Nodekamis funcionando:
 2. ...
 
 
-Teníamos 2 euros y pico para un vps.
+Teníamos 2 euros y pico para un vps con **Debian**.
 
 ```
 Bienvenido a xxxxxx
@@ -32,6 +32,66 @@ Creamos usuario de sistema con home, posicionar y clonar
 ```
 useradd -s /usr/sbin/nologin -r -m nodekami
 cd /home/nodekami
-git clone https://github.com/gurumelo/nodekami
+git clone https://github.com/gurumelo/nodekami && cp -r nodekami/* . && rm -rf nodekami/
 chown -r nodekami:nodekami *
 ```
+
+Instalación de Kamailio
+
+
+
+
+
+
+
+
+Instalamos nginx y node
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------
+/etc/systemd/system# more nodekami.service 
+[Service]
+WorkingDirectory=/home/nodekami/app
+ExecStart=/usr/local/bin/node index.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=nodekami
+User=nodekami
+Group=nodekami
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+
+
+  systemctl enable nodekami
+  systemctl start nodekami
+  
+  
+  
+  
+  server {
+        listen 80;
+        server_name **AQUÍTUHOST.net**;
+
+        location / {
+                proxy_pass http://127.0.0.1:3000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+        }
+}
+
