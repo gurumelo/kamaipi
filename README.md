@@ -180,6 +180,13 @@ certtool -s --load-privkey=kamailio-cert.key --bits 4096 --template=tls.template
 chmod 440 kamailio-cert*
 ```
 
+**Lanzar la creación de la base de datos**
+
+```
+kamdbctl create
+# Responder a todo que sí, sí, sí...
+```
+
 Instalamos nginx y node
 
 
