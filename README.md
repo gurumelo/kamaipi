@@ -92,6 +92,57 @@ usermod -a -G rtpproxy kamailio
 # por STORE_PLAINTEXT_PW=0
 ```
 
+**/etc/kamailio/kamailio.cfg**
+
+```
+# cp /etc/kamailio/kamailio.cfg /etc/kamailio/kamailio.cfg.BAK
+# nano /etc/kamailio/kamailio.cfg
+
+# tras #!KAMAILIO añadir carga de módulos (con las almohadillas incluidas)
+```
+
+```
+#!define WITH_SQLITE
+#!define WITH_AUTH
+#!define WITH_USRLOCDB
+#!define WITH_NAT
+#!define WITH_TLS
+```
+
+```
+# Descomentar y sustituir #alias="sip.mydomain.com"
+# Por alias="AQUÍTUDOMINIO.net"
+
+
+# Sustituir modparam("rtpproxy", "rtpproxy_sock", "udp:127.0.0.1:7722")
+# Por modparam("rtpproxy", "rtpproxy_sock", "unix:/var/run/rtpproxy/rtpproxy.sock")
+
+
+# Sustituir modparam("auth_db", "calculate_ha1", yes)
+# Por modparam("auth_db", "calculate_ha1", 0)
+
+# Sustituir modparam("auth_db", "password_column", "password")
+# Por modparam("auth_db", "password_column", "ha1")
+
+# Entorno a la línea 244, añadimos (almohadillas inclusive):
+```
+
+```
+#!ifdef WITH_SQLITE
+loadmodule "db_sqlite.so"
+#!endif
+```
+
+```
+# Entorno a la línea 295, se añade (almohadillas inclusive):
+```
+
+```
+#!ifdef WITH_SQLITE
+modparam("auth_db", "db_url", "sqlite:///home/nodekami/app/kamailio.sqlite")
+#!define DBURL "sqlite:///home/nodekami/app/kamailio.sqlite"
+#!endif
+```
 
 
 
