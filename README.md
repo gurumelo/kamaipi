@@ -124,7 +124,7 @@ nano /etc/kamailio/kamailio.cfg
 # Sustituir modparam("auth_db", "password_column", "password")
 # Por modparam("auth_db", "password_column", "ha1")
 
-# Entorno a la línea 244, añadimos (almohadillas inclusive):
+# Justo después de loadmodule "acc.so", añadimos (almohadillas inclusive):
 ```
 
 ```
@@ -134,7 +134,8 @@ loadmodule "db_sqlite.so"
 ```
 
 ```
-# Entorno a la línea 295, se añade (almohadillas inclusive):
+# Justo después de # ----------------- setting module-specific parameters ---------------
+ , se añade (almohadillas inclusive):
 ```
 
 ```
