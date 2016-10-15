@@ -70,7 +70,7 @@ usermod -a -G rtpproxy kamailio
 **/etc/default/kamailio**
 
 ```
-# nano /etc/default/kamailio 
+nano /etc/default/kamailio 
 # descomentamos, cambiamos #RUN_KAMAILIO=yes
 # por RUN_KAMAILIO=yes
 ```
@@ -78,7 +78,7 @@ usermod -a -G rtpproxy kamailio
 **/etc/kamailio/kamctlrc**
 
 ```
-# nano /etc/kamailio/kamctlrc
+nano /etc/kamailio/kamctlrc
 # cambiamos # SIP_DOMAIN=kamailio.org
 # por SIP_DOMAIN=AQUÍTUDOMINIO.net
 
@@ -95,8 +95,8 @@ usermod -a -G rtpproxy kamailio
 **/etc/kamailio/kamailio.cfg**
 
 ```
-# cp /etc/kamailio/kamailio.cfg /etc/kamailio/kamailio.cfg.BAK
-# nano /etc/kamailio/kamailio.cfg
+cp /etc/kamailio/kamailio.cfg /etc/kamailio/kamailio.cfg.BAK
+nano /etc/kamailio/kamailio.cfg
 
 # tras #!KAMAILIO añadir carga de módulos (con las almohadillas incluidas)
 ```
@@ -144,7 +144,41 @@ modparam("auth_db", "db_url", "sqlite:///home/nodekami/app/kamailio.sqlite")
 #!endif
 ```
 
+**/etc/kamailio/tls.cfg**
 
+```
+mv /etc/kamailio/tls.cfg /etc/kamailio/tls.cfg.bak
+nano /etc/kamailio/tls.cfg
+```
+
+Compuesto por:
+
+```
+[server:default]
+method = TLSv1
+verify_certificate = no
+require_certificate = no
+private_key = /etc/kamailio/kamailio-cert.key
+certificate = /etc/kamailio/kamailio-cert.crt
+```
+
+Guardamos archivo
+
+Creación de certificados:
+
+```
+cd /etc/kamailio
+nano tls.template
+# con el siguiente contenido
+cn = "AQUÍTUDOMINIO.net"
+expiration_days = 1984
+# Guardar
+# Crear certificados
+certtool -p --bits 4096 --template=tls.template --outfile kamailio-cert.key
+certtool -s --load-privkey=kamailio-cert.key --bits 4096 --template=tls.template --outfile kamailio-cert.crt
+# Establecer permisos
+chmod 440 kamailio-cert*
+```
 
 Instalamos nginx y node
 
