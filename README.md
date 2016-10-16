@@ -161,6 +161,10 @@ verify_certificate = no
 require_certificate = no
 private_key = /etc/kamailio/kamailio-cert.key
 certificate = /etc/kamailio/kamailio-cert.crt
+
+[client:default]
+verify_certificate = no
+require_certificate = no
 ```
 
 Guardamos archivo
@@ -179,6 +183,7 @@ certtool -p --bits 4096 --template=tls.template --outfile kamailio-cert.key
 certtool -s --load-privkey=kamailio-cert.key --bits 4096 --template=tls.template --outfile kamailio-cert.crt
 # Establecer permisos
 chmod 440 kamailio-cert*
+chown root:kamailio kamailio-cert.*
 ```
 
 **Lanzar la creación de la base de datos**
@@ -186,6 +191,12 @@ chmod 440 kamailio-cert*
 ```
 kamdbctl create
 # Responder a todo que sí, sí, sí...
+```
+
+**Arrancar**
+
+```
+service kamailio start
 ```
 
 Instalamos nginx y node
