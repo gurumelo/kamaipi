@@ -199,11 +199,28 @@ kamdbctl create
 service kamailio start
 ```
 
-Instalamos nginx y node
+##Instalamos nginx y node
+
+```
+apt-get install nginx-extras curl
+```
+
+```
+curl -sL https://deb.nodesource.com/setup_4.x | bash -
+apt-get install nodejs
+```
+
+Instalamos las dependencias de la aplicación
+
+```
+cd /home/nodekami/app
+npm install
+```
 
 
 
 
+**Permisos**
 
 
 
