@@ -232,6 +232,23 @@ nano public/js/index.js
 # crypt.setKey('-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx1c8pWiTjG9iJ6Y/L3yvF/r4y2roy817aSIjckfbOcAWvoaZeoW0XBtWyusTCqnvkePEplUj0+bKuOakpaQlIsaGfc209zdTu2S9hrOyi4ezwhlHg+9Le4+KdvWaxhflnxKx8oaLK/FDQQDYug7vdRaY87Q694GlBoWejkvpcxfKYHFHwdcK8KQ1TSBRfrKhODT6gliVMuqtbhPwOpfYoxtNOs+8PxbGORwVjwb6C1BDSD3xeDKosD34Cm4es87SRyedOoi6uoeYBNmFODU73yWDWS01hTuNjCnfxsP5eEd3mNtYaBL/ioJAvtMqa/6ehyEsSeMG2rW+5Vsyd7rzaQIDAQAB-----END PUBLIC KEY-----');
 ```
 
+Configurar el json de la aplicación
+```
+nano /home/nodekami/app/confi.json
+
+{
+        "dominio": "AQUÍTUDOMINIO.net",
+        "ip": "127.0.0.1",
+        "puerto": 3000,
+        "secreto": "PONAQUIUNACLAVE",
+        "bd": "kamailio.sqlite"
+}
+
+#Sustituir dominio, secreo(invéntate alguna clave).
+```
+
+
+
 **Permisos**
 
 ```
