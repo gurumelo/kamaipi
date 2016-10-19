@@ -244,7 +244,7 @@ nano /home/nodekami/app/confi.json
         "bd": "kamailio.sqlite"
 }
 
-#Sustituir dominio, secreo(invéntate alguna clave).
+#Sustituir dominio, secreto(invéntate alguna clave).
 ```
 
 
