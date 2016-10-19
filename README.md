@@ -226,38 +226,32 @@ cat rsapublica.pem
 # Copiamos la llave pública y sin retornos de carro la pegamos en
 nano public/js/index.js
 # La línea 23
-# crypt.setKey('-----BEGIN PUBLIC KEY-----BORRAESTOypegaAQU  tuCLAVEpública-----END PUBLIC KEY-----');
+# crypt.setKey('-----BEGIN PUBLIC KEY-----BORRAESTOypegaAQUítuCLAVEpública-----END PUBLIC KEY-----');
 # Borramos todo lo que contienen las comillas y. Pegamos la llave pública generada dentro de las comillas.
 # Eliminando!!! los retornos de carro. Por ejemplo:
 # crypt.setKey('-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx1c8pWiTjG9iJ6Y/L3yvF/r4y2roy817aSIjckfbOcAWvoaZeoW0XBtWyusTCqnvkePEplUj0+bKuOakpaQlIsaGfc209zdTu2S9hrOyi4ezwhlHg+9Le4+KdvWaxhflnxKx8oaLK/FDQQDYug7vdRaY87Q694GlBoWejkvpcxfKYHFHwdcK8KQ1TSBRfrKhODT6gliVMuqtbhPwOpfYoxtNOs+8PxbGORwVjwb6C1BDSD3xeDKosD34Cm4es87SRyedOoi6uoeYBNmFODU73yWDWS01hTuNjCnfxsP5eEd3mNtYaBL/ioJAvtMqa/6ehyEsSeMG2rW+5Vsyd7rzaQIDAQAB-----END PUBLIC KEY-----');
 ```
 
-
-
-
 **Permisos**
 
+```
+cd /home/nodekami/app
+chown -R nodekami:nodekami *
+chown nodekami:kamailio kamailio.sqlite
+chmod 660 kamailio.sqlite
+```
 
+## Demonizando la aplicación node y configurando nginx
 
+```
+nano /etc/systemd/system/nodekami.service
+```
 
-
-
----------------------------------------------------------------
-las llaves
-     
-
-openssl genrsa -out rsaprivada.pem 2048
-openssl rsa -pubout -in rsaprivada.pem -out rsapublica.pem
-cat rsapublica.pem
-chmod 400 rsaprivada.pem
-pegar la publica en jsencrypt sin retornos de carro
-
-
-
-/etc/systemd/system# more nodekami.service 
+Pegamos dentro
+```
 [Service]
 WorkingDirectory=/home/nodekami/app
-ExecStart=/usr/local/bin/node index.js
+ExecStart=/usr/bin/node index.js
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
@@ -267,7 +261,7 @@ Group=nodekami
 
 [Install]
 WantedBy=multi-user.target
-
+```
 
 
 
