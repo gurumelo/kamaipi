@@ -263,18 +263,23 @@ Group=nodekami
 WantedBy=multi-user.target
 ```
 
+Habilitamos servicio y lo arrancamos
+```
+systemctl enable nodekami
+systemctl start nodekami
+```
 
+Habilitamos sitio para nginx
 
+```
+nano /etc/nginx/sites-available/nodekami
+```
 
-  systemctl enable nodekami
-  systemctl start nodekami
-  
-  
-  
-  
-  server {
+Pegamos dentro
+```
+server {
         listen 80;
-        server_name **AQUÍTUHOST.net**;
+        server_name AQUÍTUHOST.net;
 
         location / {
                 proxy_pass http://127.0.0.1:3000;
@@ -285,4 +290,13 @@ WantedBy=multi-user.target
                 proxy_cache_bypass $http_upgrade;
         }
 }
+```
 
+Guardamos. Enlazamos
+```
+ln -s /etc/nginx/sites-available/nodekami /etc/nginx/sites-enabled/nodekami
+service nginx restart
+```
+
+Y probamos:
+http://aquítudominio.net
