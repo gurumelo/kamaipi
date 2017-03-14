@@ -39,6 +39,7 @@ chown -r nodekami:nodekami *
 
 Luego volvemos sobre ello.
 
+
 ##Instalación de Kamailio
 
 Repositorios e instalación de paquetes necesarios
